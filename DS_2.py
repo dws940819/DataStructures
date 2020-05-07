@@ -91,4 +91,13 @@ my_list = [1,2,3,4,5,6]
     作业：验证列表索引操作是O(1),并将时间复杂度改为O（n）
 '''
 
+li = [1,2,3,4,5,6]
+
+print(li[1])
+
+j = li[5]
+for i in range(len(li)):
+    if li[i] < j:
+        j = li[i]
+return j
 
