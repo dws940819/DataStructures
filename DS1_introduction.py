@@ -140,8 +140,8 @@ def get_min(my_list):
             # 
             if my_list[i] > my_list[j]:
                 break
-            else:
-                return my_list[i]
+        else:
+            return my_list[i]
 
 print(get_min(my_list))
 
