@@ -60,7 +60,49 @@
     2.二分搜索：二分搜索将从中间开始检测，而不是按顺序搜索列表，如果查找项与我们刚搜索到的项匹配，则所有结束。
     如果不匹配，我们可以利用列表的有序性来排除掉一半的剩余项......
 
+    def binarySearch(alist,item):
+        first = 0
+        last = len(alist) -1
+        found = False
+
+        while first <= last and not found:
+            midpoint = (first+last) // 2
+            print(midpoint)
+
+            if alist[midpoint] == item:
+                found = True
+            else:
+                if item < alist[midpoint]:
+                    last = midpoint - 1
+                else:
+                    first = midpoint + 1
+
+        return found
+
+    alist = [17,20,16,31,45,54,56,66,77,88,94]
+    # binarySearch(alist,50)
+    print(binarySearch(alist,50))
+
 '''
 
+# 递归二分搜索
+
 def binarySearch(alist,item):
-    pass
+    if len(alist) == 0:
+        return False
+    else:
+        midpoint = len(alist)//2
+        if alist[midpoint] == item:
+            return True
+        else:
+            if item < alist[midpoint]:
+                return binarySearch(alist[:midpoint],item)
+            else:
+                return binarySearch(alist[midpoint+1:],item)
+
+
+alist = [17,20,16,31,45,54,56,66,77,88,94]
+print(binarySearch(alist,94))
+
+
+
